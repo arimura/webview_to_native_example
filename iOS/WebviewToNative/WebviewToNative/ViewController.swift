@@ -49,6 +49,8 @@ class ViewController: UIViewController, WKNavigationDelegate, FSSRewardedVideoDe
             decisionHandler(.cancel)
             NSLog("navigation canceled")
             
+            //FluctSDKを利用した場合の実装例です。
+            //SDKの呼び出し部分は任意のSDKに置き換えてください。
             FSSRewardedVideo.shared.delegate = self
             FSSRewardedVideo.shared.load(withGroupId: "1000172151", unitId: "1000275015")
         } else {
