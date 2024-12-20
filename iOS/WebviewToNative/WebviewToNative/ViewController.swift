@@ -45,15 +45,14 @@ class ViewController: UIViewController, WKNavigationDelegate, FSSRewardedVideoDe
                  decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         NSLog("url: \(navigationAction.request.url?.absoluteString ?? "")")
         
-        if navigationAction.request.url?.absoluteString.contains("google") == true
-            || navigationAction.request.url?.absoluteString.contains("about:blank") == true {
-            decisionHandler(.allow)
-        } else {
+        if navigationAction.request.url?.absoluteString.contains("corp.fluct.jp") == true {
             decisionHandler(.cancel)
             NSLog("navigation canceled")
             
             FSSRewardedVideo.shared.delegate = self
             FSSRewardedVideo.shared.load(withGroupId: "1000172151", unitId: "1000275015")
+        } else {
+            decisionHandler(.allow)
         }
     }
     
