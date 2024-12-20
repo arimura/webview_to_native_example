@@ -1,3 +1,3 @@
 # webview to native example
 
-[video](./demo.mp4)]
+[video](demo.mp4)]
